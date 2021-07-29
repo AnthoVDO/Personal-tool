@@ -1,0 +1,58 @@
+/* App */
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(57, 127, 160);
+    min-height: 100vh;
+    color: rgb(219, 217, 217);
+    font-family: 'Chivo', sans-serif;
+}
+
+
+/* Holiday request */
+
+.holidayRequest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: rgb(28, 98, 126);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.holidayRequest__container {
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.form__label {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form__view {
+    background-color: rgb(28, 98, 126);
+    padding: 25px;
+    border-radius: 15px;
+    width: 35%;
+}
