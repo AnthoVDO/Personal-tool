@@ -4,10 +4,10 @@ const HolidayRequest = () => {
 
 
     const [name, setName] = useState("Van Den Ostende Anthony");
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("")
+    const [startDate, setStartDate] = useState("--start date--");
+    const [endDate, setEndDate] = useState("--end date--")
     const [totalDay, setTotalDay] = useState(0);
-    const [backToWorkDay, setBackToWorkDay] = useState("");
+    const [backToWorkDay, setBackToWorkDay] = useState("--BTW day--");
 
     const fillName = (e) => {
         setName(e.target.value);
@@ -39,6 +39,19 @@ const HolidayRequest = () => {
         
     }, [startDate, endDate])
 
+    const copyToClipBoard = (e) => {
+        const text = e.target.parentNode.querySelector("p").innerText;
+
+        const textToCopy = document.createElement('input');
+        document.body.appendChild(textToCopy);
+        textToCopy.value = text;
+        textToCopy.select();
+        document.execCommand("copy");
+        textToCopy.remove();
+        alert('copied !');
+        console.log(text)
+    }
+
     
 
 
@@ -48,7 +61,7 @@ const HolidayRequest = () => {
     return (
         <div className="holidayRequest">
 
-            <h2>Holiday request generator</h2>
+            <h2 className="holidayRequest__title">Holiday request generator</h2>
 
             <div className="holidayRequest__container">
 
@@ -86,19 +99,29 @@ const HolidayRequest = () => {
 
                 <div className="form__view">
 
-                <h4>Object</h4>
+                
 
                 <div className="form__view__object">
+                <h4>Object</h4>
+                <p>
 
-                Absence request <b> {name} {startDate} </b> 
+                   Absence request <b> {name} {startDate} </b> 
+                </p>
+                <button 
+                className="copy__btn"
+                onClick={(e)=>copyToClipBoard(e)}
+                >Copy to clipboard</button>
+
+                 
 
                 </div>
 
-                <h4>Body</h4>
+                
 
                 <div className="form__view__body" >
-
-                Hello, <br />
+                <h4>Body</h4>
+                <p>
+                    Hello, <br />
 
                 I would like to take holiday starting <b>{startDate}</b>  until <b>{endDate}</b> , <br />
 
@@ -107,6 +130,14 @@ const HolidayRequest = () => {
                 BTW <b>{backToWorkDay.toString()}</b> . <br />
 
                 kind regards,
+                </p>
+                <button 
+                className="copy__btn"
+                onClick={(e)=>copyToClipBoard(e)}
+                >
+                
+                Copy to clipboard</button>
+                
 
                 </div>
 

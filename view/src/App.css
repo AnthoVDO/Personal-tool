@@ -35,10 +35,10 @@
 }
 
 .holidayRequest__container {
-    height: 50vw;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -55,4 +55,19 @@
     padding: 25px;
     border-radius: 15px;
     width: 35%;
+    margin-top: 50px;
+}
+
+.form__view__object,
+.form__view__body {
+    position: relative;
+}
+
+.form__view__body {
+    margin-top: 50px;
+}
+
+.copy__btn {
+    position: absolute;
+    right: 0;
 }
