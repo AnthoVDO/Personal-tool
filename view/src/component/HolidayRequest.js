@@ -48,8 +48,17 @@ const HolidayRequest = () => {
         textToCopy.select();
         document.execCommand("copy");
         textToCopy.remove();
-        alert('copied !');
-        console.log(text)
+
+        // creat a div to alert the person that the element has been copied !
+        const tempWindow = document.createElement("div");
+        e.target.appendChild(tempWindow);
+        tempWindow.className = "tempWindow";
+        tempWindow.textContent = "Copied !"
+        setTimeout(()=> {
+            tempWindow.remove();
+        }, 1000)
+
+
     }
 
     

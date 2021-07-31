@@ -71,3 +71,57 @@
     position: absolute;
     right: 0;
 }
+
+
+/* class for the temp window while copy to clip board */
+
+.tempWindow {
+    position: absolute;
+    left: 0;
+    top: 25px;
+    background-color: rgb(243, 182, 67);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 950px) {
+    .form,
+    .form__view {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .form,
+    .form__view {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form,
+    .form__view {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .form,
+    .form__view {
+        width: 75%;
+    }
+    .form__label {
+        display: flex;
+        flex-direction: column;
+    }
+    .form__label label {
+        margin-bottom: 10px;
+    }
+    .holidayRequest__title {
+        text-align: center;
+    }
+}
