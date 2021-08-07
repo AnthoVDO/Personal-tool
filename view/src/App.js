@@ -17,8 +17,8 @@ function App() {
     <div className="App">
 
             <Router>
-                <div className="nav_bar">
-                    <nav>
+                <div >
+                    <nav className="nav_bar">
                     <ul>
                         <li>
                         <NavLink to="/" activeClassName="selected">Home</NavLink>
@@ -27,7 +27,7 @@ function App() {
                         <NavLink to="/holidayRequest" activeClassName="selected">Holiday request</NavLink>
                         </li>
                         <li>
-                        <NavLink to="/orangeMobileReport" activeClassName="selected">Orange MBTS report</NavLink>
+                        <NavLink to="/orangeMobileReport" activeClassName="selected">MBTS report</NavLink>
                         </li>
                     </ul>
                     </nav>
