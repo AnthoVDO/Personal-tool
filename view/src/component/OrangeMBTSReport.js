@@ -288,6 +288,196 @@ const OrangeMBTSReport = () => {
 
                     <div id="batteryNumberElement">
 
+                    <div className="batteryString">
+                        <h5>Battery string 1</h5>
+                        <div className="voltageOnRectifier">
+                            <label htmlFor="rectifierV1">Voltage on rectifier</label>
+                            <input type="number" name="rectifierV1" id="rectifierV1" />
+                        </div>
+                        <div className="currentOnRectifier">
+                            <label htmlFor="rectifierC1">Current on rectifier</label>
+                            <input type="number" name="rectifierC1" id="recitifierC1" />
+                        </div>
+                        <div className="voltageOnBattery">
+                            <label htmlFor="batteryV1">Voltage on battery</label>
+                            <input type="number" name="batteryV1" id="batteryV1" />
+                        </div>
+                        <div className="currentOnBattery">
+                            <label htmlFor="batteryC1">Current on battery</label>
+                            <input type="number" name="batteryC1" id="batteryC1" />
+                        </div>
+                        <div className="batteryTighted">
+                            <p>Batteries tighted</p>
+                            <label htmlFor="batteryTightedYes1">Yes</label>
+                            <input type="radio" name="batteryTighted1" id="batteryTightedYes1" />
+                            <label htmlFor="batteryTightedNo1">No</label>
+                            <input type="radio" name="batteryTighted1" id="batteryTightedNo1" />
+                        </div>
+                        <div className="batteryReplacement">
+                            <p>Batteries need to be replaced ?</p>
+                            <label htmlFor="batteryReplacementYes1">Yes</label>
+                            <input type="radio" name="batteryReplacement1" id="batteryReplacementYes1" />
+                            <label htmlFor="batteryReplacementNo1">No</label>
+                            <input type="radio" name="batteryReplacement1" id="batteryReplacementNo1" />
+                        </div>
+                        <div className="batteryRemark">
+                            <label htmlFor="remark1">Remark</label>
+                            <input type="text" name="remark1" id="remark1" />
+                        </div>
+                    </div>
+
+                    <div className="batteryString">
+                        <h5>Battery string 2</h5>
+                        <div className="voltageOnRectifier">
+                            <label htmlFor="rectifierV2">Voltage on rectifier</label>
+                            <input type="number" name="rectifierV2" id="rectifierV2" />
+                        </div>
+                        <div className="currentOnRectifier">
+                            <label htmlFor="rectifierC2">Current on rectifier</label>
+                            <input type="number" name="rectifierC2" id="recitifierC2" />
+                        </div>
+                        <div className="voltageOnBattery">
+                            <label htmlFor="batteryV2">Voltage on battery</label>
+                            <input type="number" name="batteryV2" id="batteryV2" />
+                        </div>
+                        <div className="currentOnBattery">
+                            <label htmlFor="batteryC2">Current on battery</label>
+                            <input type="number" name="batteryC2" id="batteryC2" />
+                        </div>
+                        <div className="batteryTighted">
+                            <p>Batteries tighted</p>
+                            <label htmlFor="batteryTightedYes2">Yes</label>
+                            <input type="radio" name="batteryTighted2" id="batteryTightedYes2" />
+                            <label htmlFor="batteryTightedNo2">No</label>
+                            <input type="radio" name="batteryTighted2" id="batteryTightedNo2" />
+                        </div>
+                        <div className="batteryReplacement">
+                            <p>Batteries need to be replaced ?</p>
+                            <label htmlFor="batteryReplacementYes2">Yes</label>
+                            <input type="radio" name="batteryReplacement2" id="batteryReplacementYes2" />
+                            <label htmlFor="batteryReplacementNo2">No</label>
+                            <input type="radio" name="batteryReplacement2" id="batteryReplacementNo2" />
+                        </div>
+                        <div className="batteryRemark2">
+                            <label htmlFor="remark2">Remark</label>
+                            <input type="text" name="remark2" id="remark2" />
+                        </div>
+                    </div>
+
+                    <div className="batteryString">
+                        <h5>Battery string 3</h5>
+                        <div className="voltageOnRectifier">
+                            <label htmlFor="rectifierV3">Voltage on rectifier</label>
+                            <input type="number" name="rectifierV3" id="rectifierV3" />
+                        </div>
+                        <div className="currentOnRectifier">
+                            <label htmlFor="rectifierC3">Current on rectifier</label>
+                            <input type="number" name="rectifierC3" id="recitifierC3" />
+                        </div>
+                        <div className="voltageOnBattery">
+                            <label htmlFor="batteryV3">Voltage on battery</label>
+                            <input type="number" name="batteryV3" id="batteryV3" />
+                        </div>
+                        <div className="currentOnBattery">
+                            <label htmlFor="batteryC3">Current on battery</label>
+                            <input type="number" name="batteryC3" id="batteryC3" />
+                        </div>
+                        <div className="batteryTighted">
+                            <p>Batteries tighted</p>
+                            <label htmlFor="batteryTightedYes3">Yes</label>
+                            <input type="radio" name="batteryTighted3" id="batteryTightedYes3" />
+                            <label htmlFor="batteryTightedNo3">No</label>
+                            <input type="radio" name="batteryTighted3" id="batteryTightedNo3" />
+                        </div>
+                        <div className="batteryReplacement">
+                            <p>Batteries need to be replaced ?</p>
+                            <label htmlFor="batteryReplacementYes3">Yes</label>
+                            <input type="radio" name="batteryReplacement3" id="batteryReplacementYes3" />
+                            <label htmlFor="batteryReplacementNo3">No</label>
+                            <input type="radio" name="batteryReplacement3" id="batteryReplacementNo3" />
+                        </div>
+                        <div className="batteryRemark">
+                            <label htmlFor="remark3">Remark</label>
+                            <input type="text" name="remark3" id="remark3" />
+                        </div>
+                    </div>
+
+                    <div className="batteryString">
+                        <h5>Battery string 4</h5>
+                        <div className="voltageOnRectifier">
+                            <label htmlFor="rectifierV4">Voltage on rectifier</label>
+                            <input type="number" name="rectifierV4" id="rectifierV4" />
+                        </div>
+                        <div className="currentOnRectifier">
+                            <label htmlFor="rectifierC4">Current on rectifier</label>
+                            <input type="number" name="rectifierC4" id="recitifierC4" />
+                        </div>
+                        <div className="voltageOnBattery">
+                            <label htmlFor="batteryV4">Voltage on battery</label>
+                            <input type="number" name="batteryV4" id="batteryV4" />
+                        </div>
+                        <div className="currentOnBattery">
+                            <label htmlFor="batteryC4">Current on battery</label>
+                            <input type="number" name="batteryC4" id="batteryC4" />
+                        </div>
+                        <div className="batteryTighted">
+                            <p>Batteries tighted</p>
+                            <label htmlFor="batteryTightedYes4">Yes</label>
+                            <input type="radio" name="batteryTighted4" id="batteryTightedYes4" />
+                            <label htmlFor="batteryTightedNo4">No</label>
+                            <input type="radio" name="batteryTighted4" id="batteryTightedNo4" />
+                        </div>
+                        <div className="batteryReplacement">
+                            <p>Batteries need to be replaced ?</p>
+                            <label htmlFor="batteryReplacementYes4">Yes</label>
+                            <input type="radio" name="batteryReplacement4" id="batteryReplacementYes4" />
+                            <label htmlFor="batteryReplacementNo4">No</label>
+                            <input type="radio" name="batteryReplacement4" id="batteryReplacementNo4" />
+                        </div>
+                        <div className="batteryRemark">
+                            <label htmlFor="remark4">Remark</label>
+                            <input type="text" name="remark4" id="remark4" />
+                        </div>
+                    </div>
+
+                    <div className="batteryString">
+                        <h5>Battery string 5</h5>
+                        <div className="voltageOnRectifier">
+                            <label htmlFor="rectifierV5">Voltage on rectifier</label>
+                            <input type="number" name="rectifierV5" id="rectifierV5" />
+                        </div>
+                        <div className="currentOnRectifier">
+                            <label htmlFor="rectifierC5">Current on rectifier</label>
+                            <input type="number" name="rectifierC5" id="recitifierC5" />
+                        </div>
+                        <div className="voltageOnBattery">
+                            <label htmlFor="batteryV5">Voltage on battery</label>
+                            <input type="number" name="batteryV5" id="batteryV5" />
+                        </div>
+                        <div className="currentOnBattery">
+                            <label htmlFor="batteryC5">Current on battery</label>
+                            <input type="number" name="batteryC5" id="batteryC5" />
+                        </div>
+                        <div className="batteryTighted">
+                            <p>Batteries tighted</p>
+                            <label htmlFor="batteryTightedYes5">Yes</label>
+                            <input type="radio" name="batteryTighted5" id="batteryTightedYes5" />
+                            <label htmlFor="batteryTightedNo5">No</label>
+                            <input type="radio" name="batteryTighted5" id="batteryTightedNo5" />
+                        </div>
+                        <div className="batteryReplacement">
+                            <p>Batteries need to be replaced ?</p>
+                            <label htmlFor="batteryReplacementYes5">Yes</label>
+                            <input type="radio" name="batteryReplacement5" id="batteryReplacementYes5" />
+                            <label htmlFor="batteryReplacementNo5">No</label>
+                            <input type="radio" name="batteryReplacement5" id="batteryReplacementNo5" />
+                        </div>
+                        <div className="batteryRemark">
+                            <label htmlFor="remark5">Remark</label>
+                            <input type="text" name="remark5" id="remark5" />
+                        </div>
+                    </div>
+
                     </div>
 
                     
