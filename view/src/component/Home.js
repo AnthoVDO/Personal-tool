@@ -5,7 +5,6 @@ const Home = () => {
         <div className="home">
 
             <h2>Welcome, choose a tool</h2>
-            <h6>Made by Anthony Van Den Ostende</h6>
 
 
 

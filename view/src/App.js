@@ -45,6 +45,11 @@ function App() {
                         <Home />
                     </Route>
                     </Switch>
+                    <footer>
+                    <h6>
+                       Made by Anthony Van Den Ostende 
+                    </h6>
+                    </footer>
                 </div>
             </Router>
 

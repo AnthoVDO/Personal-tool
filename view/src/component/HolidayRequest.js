@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 const HolidayRequest = () => {
 
 
-    const [name, setName] = useState("Van Den Ostende Anthony");
+    const [name, setName] = useState("");
     const [startDate, setStartDate] = useState("--start date--");
     const [endDate, setEndDate] = useState("--end date--")
     const [totalDay, setTotalDay] = useState(0);
@@ -40,14 +40,26 @@ const HolidayRequest = () => {
     }, [startDate, endDate])
 
     const copyToClipBoard = (e) => {
-        const text = e.target.parentNode.querySelector("p").innerText;
+        /* First try but there isn't rich text with it */
+        // const text = e.target.parentNode.querySelector("section").textContent;
+        // const textToCopy = document.createElement('input');
+        // document.body.appendChild(textToCopy);
+        // textToCopy.value = text;
+        // textToCopy.select();
+        // document.execCommand("copy");
+        // textToCopy.remove();
 
-        const textToCopy = document.createElement('input');
-        document.body.appendChild(textToCopy);
-        textToCopy.value = text;
-        textToCopy.select();
+        /* Copy rich text with this one */
+        const text = e.target.parentNode.querySelector("section").innerHTML
+
+        const listener = (ev) => {
+            ev.preventDefault();
+            ev.clipboardData.setData("text/html", text);
+            ev.clipboardData.setData("text/plain", text);
+        };
+        document.addEventListener("copy", listener);
         document.execCommand("copy");
-        textToCopy.remove();
+        document.removeEventListener("copy", listener);
 
         // creat a div to alert the person that the element has been copied !
         const tempWindow = document.createElement("div");
@@ -80,7 +92,7 @@ const HolidayRequest = () => {
 
                     <div className="name form__label">
                         <label htmlFor="name">Enter your name</label>
-                        <input type="text" name="name" id="name" onChange={fillName} placeholder={name} />
+                        <input type="text" name="name" id="name" onChange={fillName}  />
                     </div>
 
                     <div className="startDate form__label">
@@ -112,10 +124,10 @@ const HolidayRequest = () => {
 
                 <div className="form__view__object">
                 <h4>Object</h4>
-                <p>
+                <section>
 
-                   Absence request <b> {name} {startDate} </b> 
-                </p>
+                   Absence request  {name} {startDate}  
+                </section>
                 <button 
                 className="copy__btn"
                 onClick={(e)=>copyToClipBoard(e)}
@@ -129,17 +141,17 @@ const HolidayRequest = () => {
 
                 <div className="form__view__body" >
                 <h4>Body</h4>
-                <p>
+                <section>
                     Hello, <br />
 
-                I would like to take holiday starting <b>{startDate}</b>  until <b>{endDate}</b> , <br />
+                I would like to take holiday starting {startDate} until {endDate} , <br />
 
-                which mean a total of <b>{totalDay}</b>  day(s) <br />
+                which mean a total of {totalDay}  day(s) <br />
 
-                BTW <b>{backToWorkDay.toString()}</b> . <br />
+                BTW {backToWorkDay.toString()} . <br />
 
                 kind regards,
-                </p>
+                </section>
                 <button 
                 className="copy__btn"
                 onClick={(e)=>copyToClipBoard(e)}

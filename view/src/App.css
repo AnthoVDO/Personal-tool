@@ -83,6 +83,28 @@
 }
 
 
+/* OrangeMBTSReport alarm section */
+
+.externalAlarmQuestion {
+    margin-bottom: 15px;
+}
+
+
+/* OrangeMBTSReport battery section */
+
+.batteryString {
+    border-top: 2px solid white;
+    margin-top: 15px;
+}
+
+
+/* OrangeMBTSReport remark section */
+
+.endFormRemark__input {
+    height: 100px;
+}
+
+
 /* class for the temp window while copy to clip board */
 
 .tempWindow {
@@ -106,17 +128,18 @@
     }
 } */
 
-@media screen and (max-width: 750px) {
+
+/* @media screen and (max-width: 750px) {
     .form,
     .form__view {
         width: 55%;
     }
-}
+} */
 
 @media screen and (max-width: 600px) {
     .form,
     .form__view {
-        width: 65%;
+        width: 75%;
     }
 }
 
