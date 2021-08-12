@@ -2,62 +2,68 @@ import React, {useEffect, useState} from 'react';
 
 const OrangeMBTSReport = () => {
 
-    const [technicianName, setTechnicianName] = useState("Van Den Ostende Anthony");
+    const [technicianName, setTechnicianName] = useState("--Technician name--");
     const [reportDate, setReportDate] = useState(new Date().toLocaleDateString());
-    const [siteName, setSiteName] = useState("??");
+    const [siteName, setSiteName] = useState("--Site name--");
     const [iandcissue, setIandcissue] = useState("No");
-    const [intrusion, setIntrusion] = useState("??");
-    const [fire, setFire] = useState("??");
-    const [ml, setMl] = useState("??");
-    const [water, setWater] = useState("??");
-    const [minorPsu, setMinorPsu] = useState("??");
-    const [majorPsu, setMajorPsu] = useState("??");
-    const [MPF, setMPF] = useState("??");
-    const [temperature, setTemperature] = useState("??");
-    const [internalGenerator, setInternalGenerator] = useState("??");
-    const [externalGenerator, setExternalGenerator] = useState("??");
-    const [wind, setWind] = useState("??");
-    const [batteryNumber, setBatteryNumber] = useState("??");
-    const [alarmRemark, setAlarmRemark] = useState("??");
-    const [generalInfo, setGeneralInfo] = useState("??");
+    const [intrusion, setIntrusion] = useState("yes/no");
+    const [fire, setFire] = useState("yes/no");
+    const [ml, setMl] = useState("yes/no");
+    const [water, setWater] = useState("yes/no");
+    const [minorPsu, setMinorPsu] = useState("yes/no");
+    const [majorPsu, setMajorPsu] = useState("yes/no");
+    const [MPF, setMPF] = useState("yes/no");
+    const [temperature, setTemperature] = useState("yes/no");
+    const [internalGenerator, setInternalGenerator] = useState("yes/no");
+    const [externalGenerator, setExternalGenerator] = useState("yes/no");
+    const [wind, setWind] = useState("yes/no");
+    const [batteryNumber, setBatteryNumber] = useState("--Number of battery--");
+    const [alarmRemark, setAlarmRemark] = useState("");
+    const [generalInfo, setGeneralInfo] = useState("");
     const [externalAlarmPresent, setExternalAlarmPresent] = useState("yes");
+    const [batteryRemark, setBatteryRemark] = useState("");
     // Battery string 1
-    const [batteryReplacement1, setBatteryReplacement1] = useState("??")
-    const [batteryEmplacement1, setBatteryEmplacement1] = useState("??");
-    const [voltageRectifier1, setVoltageRectifier1] = useState("??");
+    const [batteryReplacement1, setBatteryReplacement1] = useState("--Battery replacement--")
+    const [batteryEmplacement1, setBatteryEmplacement1] = useState("--Battery emplacement--");
+    const [voltageRectifier1, setVoltageRectifier1] = useState(54);
     const [currentRectifier1, setCurrentRectifier1] = useState("??");
     const [voltageBatt1, setVoltageBatt1] = useState("??");
     const [currentBatt1, setCurrentBatt1] = useState("??");
+    const [batteryRemark1, setBatteryRemark1] = useState("");
     // Battery string 2
-    const [batteryReplacement2, setBatteryReplacement2] = useState("??")
-    const [batteryEmplacement2, setBatteryEmplacement2] = useState("??");
-    const [voltageRectifier2, setVoltageRectifier2] = useState("??");
+    const [batteryReplacement2, setBatteryReplacement2] = useState("--Battery replacement--")
+    const [batteryEmplacement2, setBatteryEmplacement2] = useState("--Battery emplacement--");
+    const [voltageRectifier2, setVoltageRectifier2] = useState(54);
     const [currentRectifier2, setCurrentRectifier2] = useState("??");
     const [voltageBatt2, setVoltageBatt2] = useState("??");
     const [currentBatt2, setCurrentBatt2] = useState("??");
+    const [batteryRemark2, setBatteryRemark2] = useState("");
     // Battery string 3
-    const [batteryReplacement3, setBatteryReplacement3] = useState("??")
-    const [batteryEmplacement3, setBatteryEmplacement3] = useState("??");
-    const [voltageRectifier3, setVoltageRectifier3] = useState("??");
+    const [batteryReplacement3, setBatteryReplacement3] = useState("--Battery replacement--")
+    const [batteryEmplacement3, setBatteryEmplacement3] = useState("--Battery emplacement--");
+    const [voltageRectifier3, setVoltageRectifier3] = useState(54);
     const [currentRectifier3, setCurrentRectifier3] = useState("??");
     const [voltageBatt3, setVoltageBatt3] = useState("??");
     const [currentBatt3, setCurrentBatt3] = useState("??");
+    const [batteryRemark3, setBatteryRemark3] = useState("");
     // Battery string 4
-    const [batteryReplacement4, setBatteryReplacement4] = useState("??")
-    const [batteryEmplacement4, setBatteryEmplacement4] = useState("??");
-    const [voltageRectifier4, setVoltageRectifier4] = useState("??");
+    const [batteryReplacement4, setBatteryReplacement4] = useState("--Battery replacement--")
+    const [batteryEmplacement4, setBatteryEmplacement4] = useState("--Battery emplacement--");
+    const [voltageRectifier4, setVoltageRectifier4] = useState(54);
     const [currentRectifier4, setCurrentRectifier4] = useState("??");
     const [voltageBatt4, setVoltageBatt4] = useState("??");
     const [currentBatt4, setCurrentBatt4] = useState("??");
+    const [batteryRemark4, setBatteryRemark4] = useState("");
     // Battery string 5
-    const [batteryReplacement5, setBatteryReplacement5] = useState("??")
-    const [batteryEmplacement5, setBatteryEmplacement5] = useState("??");
-    const [voltageRectifier5, setVoltageRectifier5] = useState("??");
+    const [batteryReplacement5, setBatteryReplacement5] = useState("--Battery replacement--")
+    const [batteryEmplacement5, setBatteryEmplacement5] = useState("--Battery emplacement--");
+    const [voltageRectifier5, setVoltageRectifier5] = useState(54);
     const [currentRectifier5, setCurrentRectifier5] = useState("??");
     const [voltageBatt5, setVoltageBatt5] = useState("??");
     const [currentBatt5, setCurrentBatt5] = useState("??");
+    const [batteryRemark5, setBatteryRemark5] = useState("");
 
-    const [remark, setRemark] = useState("??")
+    const [remark, setRemark] = useState("no remark")
 
 
 
@@ -154,7 +160,7 @@ const OrangeMBTSReport = () => {
                         <p>External alarms present ?</p>
                         <div className="radio__label__check">
                             <label htmlFor="externalAlarmPresentYes">Yes</label>
-                        <input type="radio" name="externalAlarmPresent" id="externalAlarmPresentYes" value="yes" onChange={(e)=>{setExternalAlarmPresent(e.target.value)}} />
+                        <input type="radio" name="externalAlarmPresent" id="externalAlarmPresentYes" value="yes" onChange={(e)=>{setExternalAlarmPresent(e.target.value)}}/>
                         <label htmlFor="externalAlarmPresentNo">No</label>
                         <input type="radio" name="externalAlarmPresent" id="externalAlarmPresentNo" value="no" onChange={(e)=>{setExternalAlarmPresent(e.target.value)}}/>
                         </div>   
@@ -219,7 +225,7 @@ const OrangeMBTSReport = () => {
                             <p>Major Psu</p>
                             <div className="radio__label__check">
                             <label htmlFor="majorYes">Yes</label>
-                            <input type="radio" name="major" id="majorYes" value="yes" onChange={(e)=>{setMinorPsu(e.target.value)}}/>
+                            <input type="radio" name="major" id="majorYes" value="yes" onChange={(e)=>{setMajorPsu(e.target.value)}}/>
                             <label htmlFor="majorNo">No</label>
                             <input type="radio" name="major" id="majorNo" value="no" onChange={(e)=>{setMajorPsu(e.target.value)}}/>
                             </div>
@@ -280,6 +286,10 @@ const OrangeMBTSReport = () => {
 
                     ) : null
                     }
+                    <div className="form__label mg-top-20px">
+                        <label htmlFor="alarmRemark">Alarm remark</label>
+                        <textarea name="alarmRemark" id="alarmRemark" cols="30" rows="10" onChange={(e)=>{setAlarmRemark(e.target.value)}} ></textarea>
+                    </div>
 
                     <h4>Batteries</h4>
 
@@ -296,7 +306,7 @@ const OrangeMBTSReport = () => {
                         <h5>Battery string 1</h5>
                         <div className="voltageOnRectifier form__label">
                             <label htmlFor="rectifierV1">Voltage on rectifier</label>
-                            <input type="number" name="rectifierV1" id="rectifierV1" onChange={(e)=>{setVoltageRectifier1(e.target.value)}} />
+                            <input type="number" name="rectifierV1" id="rectifierV1" onChange={(e)=>{setVoltageRectifier1(e.target.value)}} placeholder="54"/>
                         </div>
                         <div className="currentOnRectifier form__label">
                             <label htmlFor="rectifierC1">Current on rectifier</label>
@@ -313,26 +323,26 @@ const OrangeMBTSReport = () => {
                         <div className="batteryTighted  form__label">
                             <p>Batteries tighted</p>
                             <div className="radio__label__check">
-                                <label htmlFor="batteryTightedYes1">Yes</label>
-                            <input type="radio" name="batteryTighted1" id="batteryTightedYes1" />
+                            <label htmlFor="batteryTightedYes1">Yes</label>
+                            <input type="radio" name="batteryTighted1" id="batteryTightedYes1" value="yes"/>
                             <label htmlFor="batteryTightedNo1">No</label>
-                            <input type="radio" name="batteryTighted1" id="batteryTightedNo1" />
+                            <input type="radio" name="batteryTighted1" id="batteryTightedNo1" value="no"/>
                             </div>
                             
                         </div>
                         <div className="batteryReplacement form__label">
                             <p>Batteries need to be replaced ?</p>
                             <div className="radio__label__check">
-                                <label htmlFor="batteryReplacementYes1">Yes</label>
-                            <input type="radio" name="batteryReplacement1" id="batteryReplacementYes1" />
+                            <label htmlFor="batteryReplacementYes1">Yes</label>
+                            <input type="radio" name="batteryReplacement1" id="batteryReplacementYes1" value="yes" onChange={(e)=>{setBatteryReplacement1(e.target.value)}}/>
                             <label htmlFor="batteryReplacementNo1">No</label>
-                            <input type="radio" name="batteryReplacement1" id="batteryReplacementNo1" />
+                            <input type="radio" name="batteryReplacement1" id="batteryReplacementNo1" value="no" onChange={(e)=>{setBatteryReplacement1(e.target.value)}}/>
                             </div>
                             
                         </div>
                         <div className="batteryRemark form__label">
                             <label htmlFor="remark1">Remark</label>
-                            <input type="text" name="remark1" id="remark1" onChange={(e)=>{setTechnicianName(e.target.value)}} />
+                            <input type="text" name="remark1" id="remark1" onChange={(e)=>{setBatteryRemark1(e.target.value)}} />
                         </div>
                     </div>
 ):null}
@@ -343,7 +353,7 @@ const OrangeMBTSReport = () => {
                         <h5>Battery string 2</h5>
                         <div className="voltageOnRectifier form__label">
                             <label htmlFor="rectifierV2">Voltage on rectifier</label>
-                            <input type="number" name="rectifierV2" onChange={(e)=>{setVoltageRectifier2(e.target.value)}} id="rectifierV2" />
+                            <input type="number" name="rectifierV2" onChange={(e)=>{setVoltageRectifier2(e.target.value)}} id="rectifierV2" placeholder="54"/>
                         </div>
                         <div className="currentOnRectifier form__label">
                             <label htmlFor="rectifierC2">Current on rectifier</label>
@@ -361,9 +371,9 @@ const OrangeMBTSReport = () => {
                             <p>Batteries tighted</p>
                             <div className="radio__label__check">
                                 <label htmlFor="batteryTightedYes2">Yes</label>
-                            <input type="radio" name="batteryTighted2" id="batteryTightedYes2" />
+                            <input type="radio" name="batteryTighted2" id="batteryTightedYes2" value="yes"/>
                             <label htmlFor="batteryTightedNo2">No</label>
-                            <input type="radio" name="batteryTighted2" id="batteryTightedNo2" />
+                            <input type="radio" name="batteryTighted2" id="batteryTightedNo2" value="no"/>
                             </div>
                             
                         </div>
@@ -371,15 +381,15 @@ const OrangeMBTSReport = () => {
                             <p>Batteries need to be replaced ?</p>
                             <div className="radio__label__check">
                                 <label htmlFor="batteryReplacementYes2">Yes</label>
-                            <input type="radio" name="batteryReplacement2" id="batteryReplacementYes2" />
+                            <input type="radio" name="batteryReplacement2" id="batteryReplacementYes2" value="yes" onChange={(e)=>{setBatteryReplacement2(e.target.value)}}/>
                             <label htmlFor="batteryReplacementNo2">No</label>
-                            <input type="radio" name="batteryReplacement2" id="batteryReplacementNo2" />
+                            <input type="radio" name="batteryReplacement2" id="batteryReplacementNo2" value="no" onChange={(e)=>{setBatteryReplacement2(e.target.value)}}/>
                             </div>
                             
                         </div>
                         <div className="batteryRemark2 form__label">
                             <label htmlFor="remark2">Remark</label>
-                            <input type="text" name="remark2" id="remark2" />
+                            <input type="text" name="remark2" id="remark2" onChange={(e)=>{setBatteryRemark2(e.target.value)}}/>
                         </div>
                     </div>
                     ):null}
@@ -390,7 +400,7 @@ const OrangeMBTSReport = () => {
                         <h5>Battery string 3</h5>
                         <div className="voltageOnRectifier form__label">
                             <label htmlFor="rectifierV3">Voltage on rectifier</label>
-                            <input type="number" name="rectifierV3" onChange={(e)=>{setVoltageRectifier3(e.target.value)}} id="rectifierV3" />
+                            <input type="number" name="rectifierV3" onChange={(e)=>{setVoltageRectifier3(e.target.value)}} id="rectifierV3" placeholder="54"/>
                         </div>
                         <div className="currentOnRectifier form__label">
                             <label htmlFor="rectifierC3">Current on rectifier</label>
@@ -408,9 +418,9 @@ const OrangeMBTSReport = () => {
                             <p>Batteries tighted</p>
                             <div className="radio__label__check">
                                 <label htmlFor="batteryTightedYes3">Yes</label>
-                            <input type="radio" name="batteryTighted3" id="batteryTightedYes3" />
+                            <input type="radio" name="batteryTighted3" id="batteryTightedYes3" value="yes"/>
                             <label htmlFor="batteryTightedNo3">No</label>
-                            <input type="radio" name="batteryTighted3" id="batteryTightedNo3" />
+                            <input type="radio" name="batteryTighted3" id="batteryTightedNo3" value="no"/>
                             </div>
                             
                         </div>
@@ -418,15 +428,15 @@ const OrangeMBTSReport = () => {
                             <p>Batteries need to be replaced ?</p>
                             <div className="radio__label__check">
                                 <label htmlFor="batteryReplacementYes3">Yes</label>
-                            <input type="radio" name="batteryReplacement3" id="batteryReplacementYes3" />
+                            <input type="radio" name="batteryReplacement3" id="batteryReplacementYes3" value="yes" onChange={(e)=>{setBatteryReplacement3(e.target.value)}}/>
                             <label htmlFor="batteryReplacementNo3">No</label>
-                            <input type="radio" name="batteryReplacement3" id="batteryReplacementNo3" />
+                            <input type="radio" name="batteryReplacement3" id="batteryReplacementNo3" value="no" onChange={(e)=>{setBatteryReplacement3(e.target.value)}}/>
                             </div>
                             
                         </div>
                         <div className="batteryRemark form__label">
                             <label htmlFor="remark3">Remark</label>
-                            <input type="text" name="remark3" id="remark3" />
+                            <input type="text" name="remark3" id="remark3" onChange={(e)=>{setBatteryRemark3(e.target.value)}}/>
                         </div>
                     </div>
 ):null}
@@ -437,7 +447,7 @@ const OrangeMBTSReport = () => {
                         <h5>Battery string 4</h5>
                         <div className="voltageOnRectifier form__label">
                             <label htmlFor="rectifierV4">Voltage on rectifier</label>
-                            <input type="number" name="rectifierV4" onChange={(e)=>{setVoltageRectifier4(e.target.value)}} id="rectifierV4" />
+                            <input type="number" name="rectifierV4" onChange={(e)=>{setVoltageRectifier4(e.target.value)}} id="rectifierV4" placeholder="54"/>
                         </div>
                         <div className="currentOnRectifier form__label">
                             <label htmlFor="rectifierC4">Current on rectifier</label>
@@ -455,9 +465,9 @@ const OrangeMBTSReport = () => {
                             <p>Batteries tighted</p>
                             <div className="radio__label__check">
                                 <label htmlFor="batteryTightedYes4">Yes</label>
-                            <input type="radio" name="batteryTighted4" id="batteryTightedYes4" />
+                            <input type="radio" name="batteryTighted4" id="batteryTightedYes4" value="yes"/>
                             <label htmlFor="batteryTightedNo4">No</label>
-                            <input type="radio" name="batteryTighted4" id="batteryTightedNo4" />
+                            <input type="radio" name="batteryTighted4" id="batteryTightedNo4" value="no"/>
                             </div>
                             
                         </div>
@@ -465,15 +475,15 @@ const OrangeMBTSReport = () => {
                             <p>Batteries need to be replaced ?</p>
                             <div className="radio__label__check">
                                 <label htmlFor="batteryReplacementYes4">Yes</label>
-                            <input type="radio" name="batteryReplacement4" id="batteryReplacementYes4" />
+                            <input type="radio" name="batteryReplacement4" id="batteryReplacementYes4" value="yes" onChange={(e)=>{setBatteryReplacement4(e.target.value)}}/>
                             <label htmlFor="batteryReplacementNo4">No</label>
-                            <input type="radio" name="batteryReplacement4" id="batteryReplacementNo4" />
+                            <input type="radio" name="batteryReplacement4" id="batteryReplacementNo4" value="no" onChange={(e)=>{setBatteryReplacement4(e.target.value)}}/>
                             </div>
                             
                         </div>
                         <div className="batteryRemark form__label">
                             <label htmlFor="remark4">Remark</label>
-                            <input type="text" name="remark4" id="remark4" />
+                            <input type="text" name="remark4" id="remark4" onChange={(e)=>{setBatteryRemark4(e.target.value)}}/>
                         </div>
                     </div>
 ):null}
@@ -484,7 +494,7 @@ const OrangeMBTSReport = () => {
                         <h5>Battery string 5</h5>
                         <div className="voltageOnRectifier form__label">
                             <label htmlFor="rectifierV5">Voltage on rectifier</label>
-                            <input type="number" name="rectifierV5" onChange={(e)=>{setVoltageRectifier5(e.target.value)}} id="rectifierV5" />
+                            <input type="number" name="rectifierV5" onChange={(e)=>{setVoltageRectifier5(e.target.value)}} id="rectifierV5" placeholder="54"/>
                         </div>
                         <div className="currentOnRectifier form__label">
                             <label htmlFor="rectifierC5">Current on rectifier</label>
@@ -502,9 +512,9 @@ const OrangeMBTSReport = () => {
                             <p>Batteries tighted</p>
                             <div className="radio__label__check">
                             <label htmlFor="batteryTightedYes5">Yes</label>
-                            <input type="radio" name="batteryTighted5" id="batteryTightedYes5" />
+                            <input type="radio" name="batteryTighted5" id="batteryTightedYes5" value="yes"/>
                             <label htmlFor="batteryTightedNo5">No</label>
-                            <input type="radio" name="batteryTighted5" id="batteryTightedNo5" />
+                            <input type="radio" name="batteryTighted5" id="batteryTightedNo5" value="no"/>
                             </div>
                             
                         </div>
@@ -512,22 +522,25 @@ const OrangeMBTSReport = () => {
                             <p>Batteries need to be replaced ?</p>
                             <div className="radio__label__check">
                                 <label htmlFor="batteryReplacementYes5">Yes</label>
-                            <input type="radio" name="batteryReplacement5" id="batteryReplacementYes5" />
+                            <input type="radio" name="batteryReplacement5" id="batteryReplacementYes5" value="yes" onChange={(e)=>{setBatteryReplacement5(e.target.value)}}/>
                             <label htmlFor="batteryReplacementNo5">No</label>
-                            <input type="radio" name="batteryReplacement5" id="batteryReplacementNo5" />
+                            <input type="radio" name="batteryReplacement5" id="batteryReplacementNo5" value="no" onChange={(e)=>{setBatteryReplacement5(e.target.value)}}/>
                             </div>
                             
                         </div>
                         <div className="batteryRemark form__label">
                             <label htmlFor="remark5">Remark</label>
-                            <input type="text" name="remark5" id="remark5" onChange={(e)=>{setTechnicianName(e.target.value)}} />
+                            <input type="text" name="remark5" id="remark5" onChange={(e)=>{setBatteryRemark5(e.target.value)}} />
                         </div>
                     </div>
 ):null}
-
-                    <div className="remark form__label">
+                    <div className="form__label mg-top-20px">
+                        <label htmlFor="generalBatteryRemark">General battery remark</label>
+                        <textarea name="generalBatteryRemark" id="generalBatteryRemark" cols="30" rows="10" onChange={(e)=>{setBatteryRemark(e.target.value)}}></textarea>
+                    </div>
+                    <div className="remark form__label mg-top-20px">
                     <label htmlFor="endFormRemark">Remark</label>
-                    <textarea name="endFormRemark__input" id="" cols="30" rows="10">Add remark here</textarea>
+                    <textarea name="endFormRemark__input" id="" cols="30" rows="10" onChange={(e)=>{setRemark(e.target.value)}}>Add remark here</textarea>
                         
                     </div>
                     </div>
@@ -614,10 +627,10 @@ const OrangeMBTSReport = () => {
 <div className="batteryStringAnswer">
     <h5>Battery string 1 {batteryEmplacement1}</h5>
                 <ul>
-                    <li>Voltage on rectifier: {voltageRectifier1} </li>
-                    <li>Current on rectifier: {currentRectifier1} </li>
-                    <li>Voltage on batteries: {voltageBatt1} </li>
-                    <li>Current on battery: {currentBatt1} </li>
+                    <li>Voltage on rectifier: {voltageRectifier1} V</li>
+                    <li>Current on rectifier: {currentRectifier1} A</li>
+                    <li>Voltage on batteries: {voltageBatt1} V</li>
+                    <li>Current on battery: {currentBatt1} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement1} </li>
                 </ul>
 </div>
@@ -626,10 +639,10 @@ const OrangeMBTSReport = () => {
 <div className="batteryStringAnswer">
     <h5>Battery string 2 {batteryEmplacement2}</h5>
                 <ul>
-                    <li>Voltage on rectifier: {voltageRectifier2} </li>
-                    <li>Current on rectifier: {currentRectifier2} </li>
-                    <li>Voltage on batteries: {voltageBatt2} </li>
-                    <li>Current on battery: {currentBatt2} </li>
+                    <li>Voltage on rectifier: {voltageRectifier2} V</li>
+                    <li>Current on rectifier: {currentRectifier2} A</li>
+                    <li>Voltage on batteries: {voltageBatt2} V</li>
+                    <li>Current on battery: {currentBatt2} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement2} </li>
                 </ul>
 </div>
@@ -640,10 +653,10 @@ const OrangeMBTSReport = () => {
 <div className="batteryStringAnswer">
     <h5>Battery string 3 {batteryEmplacement3}</h5>
                 <ul>
-                    <li>Voltage on rectifier: {voltageRectifier3} </li>
-                    <li>Current on rectifier: {currentRectifier3} </li>
-                    <li>Voltage on batteries: {voltageBatt3} </li>
-                    <li>Current on battery: {currentBatt3} </li>
+                    <li>Voltage on rectifier: {voltageRectifier3} V</li>
+                    <li>Current on rectifier: {currentRectifier3} A</li>
+                    <li>Voltage on batteries: {voltageBatt3} V</li>
+                    <li>Current on battery: {currentBatt3} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement3} </li>
                 </ul>
 </div>
@@ -653,10 +666,10 @@ const OrangeMBTSReport = () => {
 <div className="batteryStringAnswer">
     <h5>Battery string 4 {batteryEmplacement4}</h5>
                 <ul>
-                    <li>Voltage on rectifier: {voltageRectifier4} </li>
-                    <li>Current on rectifier: {currentRectifier4} </li>
-                    <li>Voltage on batteries: {voltageBatt4} </li>
-                    <li>Current on battery: {currentBatt4} </li>
+                    <li>Voltage on rectifier: {voltageRectifier4} V</li>
+                    <li>Current on rectifier: {currentRectifier4} A</li>
+                    <li>Voltage on batteries: {voltageBatt4} V</li>
+                    <li>Current on battery: {currentBatt4} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement4} </li>
                 </ul>
 </div>
@@ -666,18 +679,25 @@ const OrangeMBTSReport = () => {
 <div className="batteryStringAnswer">
     <h5>Battery string 5 {batteryEmplacement5}</h5>
                 <ul>
-                    <li>Voltage on rectifier: {voltageRectifier5} </li>
-                    <li>Current on rectifier: {currentRectifier5} </li>
-                    <li>Voltage on batteries: {voltageBatt5} </li>
-                    <li>Current on battery: {currentBatt5} </li>
+                    <li>Voltage on rectifier: {voltageRectifier5} V</li>
+                    <li>Current on rectifier: {currentRectifier5} A</li>
+                    <li>Voltage on batteries: {voltageBatt5} V</li>
+                    <li>Current on battery: {currentBatt5} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement5} </li>
                 </ul>
 </div>
 ):null}
+                {batteryRemark!=""? (
+                <div className="batteryRemark">
+                <h4>Battery remark</h4>
+                <p>{batteryRemark}</p>
+                </div>
                 
-
+                ) : null}
+                
                 <h4>Remark</h4>
-                {remark}
+                
+                {remark!=""? remark : "I and C done"}
                 
 
                     
