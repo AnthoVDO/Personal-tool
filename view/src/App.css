@@ -49,6 +49,7 @@
 .form__label {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -84,6 +85,11 @@
 
 .mg-top-20px {
     margin-top: 20px;
+}
+
+.wrapSentence {
+    display: inline;
+    overflow-wrap: break-word;
 }
 
 

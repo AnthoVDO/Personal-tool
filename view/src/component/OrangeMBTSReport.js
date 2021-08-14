@@ -621,7 +621,8 @@ const OrangeMBTSReport = () => {
                     <li>Site code: {siteName}</li>
                 </ul>
                 <h4>General info</h4>
-                <p>
+                <p>{iandcissue}</p>
+                <p className="wrapSentence">
                 {generalInfo}
                 </p>
                 <h4>Alarms</h4>
@@ -643,7 +644,7 @@ const OrangeMBTSReport = () => {
                     ) : "No external alarms present on site"
                 }
                 
-                <p>
+                <p className="wrapSentence">
                 {alarmRemark}
                 </p>
                 <h4>Batteries</h4>
@@ -658,7 +659,7 @@ const OrangeMBTSReport = () => {
                     <li>Current on battery: {currentBatt1} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement1} </li>
                     <li>Batteries tighted: {batteryTighted1}</li>
-                    {batteryRemark1 != null ? <li>Batteries remark: {batteryRemark1}</li> : null}
+                    {batteryRemark1 != null ? <li><p className="wrapSentence">Batteries remark: {batteryRemark1}</p></li> : null}
                     
                 </ul>
 </div>
@@ -672,8 +673,8 @@ const OrangeMBTSReport = () => {
                     <li>Voltage on batteries: {voltageBatt2} V</li>
                     <li>Current on battery: {currentBatt2} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement2} </li>
-                    <li>Batteries tighted: {batteryTighted1}</li>
-                    {batteryRemark2 != null ? <li>Batteries remark: {batteryRemark2}</li> : null}
+                    <li>Batteries tighted: {batteryTighted2}</li>
+                    {batteryRemark2 != null ? <li><p className="wrapSentence">Batteries remark: {batteryRemark2}</p></li> : null}
                 </ul>
 </div>
 ):null}
@@ -688,8 +689,8 @@ const OrangeMBTSReport = () => {
                     <li>Voltage on batteries: {voltageBatt3} V</li>
                     <li>Current on battery: {currentBatt3} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement3} </li>
-                    <li>Batteries tighted: {batteryTighted1}</li>
-                    {batteryRemark3 != null ? <li>Batteries remark: {batteryRemark3}</li> : null}
+                    <li>Batteries tighted: {batteryTighted3}</li>
+                    {batteryRemark3 != null ? <li><p className="wrapSentence">Batteries remark: {batteryRemark3}</p></li> : null}
                 </ul>
 </div>
 ):null}
@@ -703,8 +704,8 @@ const OrangeMBTSReport = () => {
                     <li>Voltage on batteries: {voltageBatt4} V</li>
                     <li>Current on battery: {currentBatt4} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement4} </li>
-                    <li>Batteries tighted: {batteryTighted1}</li>
-                    {batteryRemark4 != null ? <li>Batteries remark: {batteryRemark4}</li> : null}
+                    <li>Batteries tighted: {batteryTighted4}</li>
+                    {batteryRemark4 != null ? <li><p className="wrapSentence">Batteries remark: {batteryRemark4}</p></li> : null}
                 </ul>
 </div>
 ):null}
@@ -718,12 +719,12 @@ const OrangeMBTSReport = () => {
                     <li>Voltage on batteries: {voltageBatt5} V</li>
                     <li>Current on battery: {currentBatt5} A</li>
                     <li>Batteries need to be replaced ? : {batteryReplacement5} </li>
-                    <li>Batteries tighted: {batteryTighted1}</li>
-                    {batteryRemark5 != null ? <li>Batteries remark: {batteryRemark5}</li> : null}
+                    <li>Batteries tighted: {batteryTighted5}</li>
+                    {batteryRemark5 != null ? <li><p className="wrapSentence">Batteries remark: {batteryRemark5}</p></li> : null}
                 </ul>
 </div>
 ):null}
-                {batteryRemark!=""? (
+                {batteryRemark!==""? (
                 <div className="batteryRemark">
                 <h4>Battery remark</h4>
                 <p>{batteryRemark}</p>
@@ -733,7 +734,7 @@ const OrangeMBTSReport = () => {
                 
                 <h4>Remark</h4>
                 
-                {remark!=""? remark : "I and C done"}
+                {remark!==""? remark : "I and C done"}
                 
 
                     
