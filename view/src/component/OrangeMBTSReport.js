@@ -67,6 +67,10 @@ const OrangeMBTSReport = () => {
     const [currentBatt5, setCurrentBatt5] = useState("??");
     const [batteryRemark5, setBatteryRemark5] = useState(null);
     const [batteryTighted5, setBatteryTighted5] = useState("yes");
+    //SRS
+    const [srs2g, setSrs2g] =  useState('unkown');
+    const [srs3g, setSrs3g] =  useState('unkown');
+    const [srs4g, setSrs4g] =  useState('unkown');
 
     const [remark, setRemark] = useState("no remark")
 
@@ -546,7 +550,7 @@ const OrangeMBTSReport = () => {
                         <div className="batteryReplacement form__label">
                             <p>Batteries need to be replaced ?</p>
                             <div className="radio__label__check">
-                                <label htmlFor="batteryReplacementYes5">Yes</label>
+                            <label htmlFor="batteryReplacementYes5">Yes</label>
                             <input type="radio" name="batteryReplacement5" id="batteryReplacementYes5" value="yes" onChange={(e)=>{setBatteryReplacement5(e.target.value)}}/>
                             <label htmlFor="batteryReplacementNo5">No</label>
                             <input type="radio" name="batteryReplacement5" id="batteryReplacementNo5" value="no" onChange={(e)=>{setBatteryReplacement5(e.target.value)}}/>
@@ -563,9 +567,46 @@ const OrangeMBTSReport = () => {
                         <label htmlFor="generalBatteryRemark">General battery remark</label>
                         <textarea name="generalBatteryRemark" id="generalBatteryRemark" cols="30" rows="10" onChange={(e)=>{setBatteryRemark(e.target.value)}}></textarea>
                     </div>
+
+                    <div className="srs">
+                        <h4>SRS test</h4>
+                        <div className="srs__test form__label">
+                            <div className="radio__label form__label">
+                            <p>2G test</p>
+                            <div className="radio__label__check">
+                                <label htmlFor="srs2Gok">Ok</label>
+                                <input type="radio" name="srs2G" id="srs2Gok" value="OK" onChange={(e)=>{setSrs2g(e.target.value)}} />
+                                <label htmlFor="srs2GNok">Not ok</label>
+                                <input type="radio" name="srs2G" id="srs2GNok" value="NOK" onChange={(e)=>{setSrs2g(e.target.value)}}/>
+                            </div>
+                            <div className="radio__label form__label">
+                                <p>3G test</p>
+                            <div className="radio__label__check">
+                                <label htmlFor="srs3Gok">Ok</label>
+                                <input type="radio" name="srs3G" id="srs23ok" value="OK" onChange={(e)=>{setSrs3g(e.target.value)}}/>
+                                <label htmlFor="srs3GNok">Not ok</label>
+                                <input type="radio" name="srs3G" id="srs3GNok" value="NOK" onChange={(e)=>{setSrs3g(e.target.value)}}/>
+                            </div>
+                            </div>
+                            <div className="radio__label form__label">
+                                <p>4G test</p>
+                            <div className="radio__label__check">
+                                <label htmlFor="srs4Gok">Ok</label>
+                                <input type="radio" name="srs4G" id="srs4Gok" value="OK" onChange={(e)=>{setSrs4g(e.target.value)}}/>
+                                <label htmlFor="srs4GNok">Not ok</label>
+                                <input type="radio" name="srs4G" id="srs4GNok" value="NOK" onChange={(e)=>{setSrs4g(e.target.value)}}/>
+                            </div> 
+                            </div>
+                              
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
                     <div className="remark form__label mg-top-20px">
                     <label htmlFor="endFormRemark">Remark</label>
-                    <textarea name="endFormRemark__input" id="" cols="30" rows="10" onChange={(e)=>{setRemark(e.target.value)}}>Add remark here</textarea>
+                    <textarea name="endFormRemark__input" id="endFormRemark" cols="30" rows="10" onChange={(e)=>{setRemark(e.target.value)}}></textarea>
                         
                     </div>
                     </div>
@@ -621,7 +662,9 @@ const OrangeMBTSReport = () => {
                     <li>Site code: {siteName}</li>
                 </ul>
                 <h4>General info</h4>
+                <h5>Issue during I and C ?</h5>
                 <p>{iandcissue}</p>
+                <h5>Comment</h5>
                 <p className="wrapSentence">
                 {generalInfo}
                 </p>
@@ -641,14 +684,17 @@ const OrangeMBTSReport = () => {
                     <li>{externalGenerator}</li>
                     <li>{wind}</li>
                 </ul>
-                    ) : "No external alarms present on site"
+                    ) : alarmRemark=== "" ? "No external alarms present on site" : alarmRemark
                 }
                 
                 <p className="wrapSentence">
                 {alarmRemark}
                 </p>
                 <h4>Batteries</h4>
-                There is {batteryNumber} batteries string.
+                {
+                    batteryNumber === "0" ? "There is no battery." : batteryNumber === "1"? "There is 1 battery string." : `There are ${batteryNumber} battery strings.`
+                }
+                 
                 {batteryNumber >= 1 ? (
 <div className="batteryStringAnswer">
     <h5>Battery string 1 {batteryEmplacement1}</h5>
@@ -731,6 +777,19 @@ const OrangeMBTSReport = () => {
                 </div>
                 
                 ) : null}
+
+                <h4>SRS test</h4>
+                <ul>
+                    <li>
+                        2G: {srs2g}
+                    </li>
+                    <li>
+                        3g: {srs3g}
+                    </li>
+                    <li>
+                        4g: {srs4g}
+                    </li>
+                </ul>
                 
                 <h4>Remark</h4>
                 
