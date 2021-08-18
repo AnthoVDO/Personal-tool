@@ -3,7 +3,7 @@ import './App.css';
 import HolidayRequest from './component/HolidayRequest';
 import OrangeMBTSReport from './component/OrangeMBTSReport';
 import Home from "./component/Home";
-
+import Login from './component/user/Login';
 
 import {
   BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
+
 
 function App() {
   return (
@@ -29,22 +30,31 @@ function App() {
                         <li>
                         <NavLink to="/orangeMobileReport" activeClassName="selected">MBTS report</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/TimeWritting">Encode hours</NavLink>
+                        </li>
                     </ul>
                     </nav>
 
                     {/* A <Switch> looks through its children <Route>s and
                         renders the first one that matches the current URL. */}
+                    
                     <Switch>
-                    <Route path="/holidayRequest">
-                        <HolidayRequest />
-                    </Route>
-                    <Route path="/orangeMobileReport">
-                        <OrangeMBTSReport />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
+                        <Route path="/holidayRequest">
+                            <HolidayRequest />
+                        </Route>
+                        <Route path="/orangeMobileReport">
+                            <OrangeMBTSReport />
+                        </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
                     </Switch>
+                    
+                    
                     <footer>
                     <h6>
                        Made by Anthony Van Den Ostende 
