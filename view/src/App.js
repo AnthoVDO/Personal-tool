@@ -4,6 +4,8 @@ import HolidayRequest from './component/HolidayRequest';
 import OrangeMBTSReport from './component/OrangeMBTSReport';
 import Home from "./component/Home";
 import Login from './component/user/Login';
+import Nav from "react-bootstrap/Nav";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   BrowserRouter as Router,
@@ -19,8 +21,28 @@ function App() {
 
             <Router>
                 <div >
-                    <nav className="nav_bar">
-                    <ul>
+                    {/* <nav className="nav_bar"> */}
+
+                    <Nav variant="tabs" defaultActiveKey="/home">
+                    <Nav.Item>
+                        <Nav.Link eventKey="link-1" href="/home">
+                        <NavLink to="/home">Home</NavLink>
+                        </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="link-2">
+                        <NavLink to="/holidayRequest" >Holiday request</NavLink>
+                        </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="link-3">
+                        <NavLink to="/orangeMobileReport" >MBTS report</NavLink>
+                        </Nav.Link>
+                    </Nav.Item>
+
+                    </Nav>
+
+                    {/* <ul>
                         <li>
                         <NavLink to="/" activeClassName="selected">Home</NavLink>
                         </li>
@@ -30,11 +52,11 @@ function App() {
                         <li>
                         <NavLink to="/orangeMobileReport" activeClassName="selected">MBTS report</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/TimeWritting">Encode hours</NavLink>
-                        </li>
-                    </ul>
-                    </nav>
+                        {/* <li>
+                        <NavLink to="/login" activeClassName="selected">Encode hours</NavLink>
+                        </li> */}
+                    {/* </ul> */} 
+                    {/* </nav> */}
 
                     {/* A <Switch> looks through its children <Route>s and
                         renders the first one that matches the current URL. */}
@@ -46,12 +68,13 @@ function App() {
                         <Route path="/orangeMobileReport">
                             <OrangeMBTSReport />
                         </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
                         <Route path="/login">
                             <Login />
                         </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+                        
                     </Switch>
                     
                     
