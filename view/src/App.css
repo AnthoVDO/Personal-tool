@@ -12,6 +12,10 @@
     font-family: 'Chivo', sans-serif;
 }
 
+h2 {
+    margin: 50px 0 !important;
+}
+
 
 /* Bootstrap custom */
 
@@ -26,6 +30,9 @@
 }
 
 
+/* ======================================== Holiday request ======================================== */
+
+
 /* Holiday request */
 
 .holidayRequest {
@@ -34,7 +41,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 30px 0;
+    margin-top: 100px;
 }
 
 .form {
@@ -91,6 +98,9 @@
 }
 
 
+/* ======================================== MBTS report ======================================== */
+
+
 /* OrangeMBTSReport */
 
 .radio__label p {
@@ -129,6 +139,19 @@
 }
 
 
+/*Footer*/
+
+.generalFooter {
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ======================================== Function ======================================== */
+
+
 /* class for the temp window while copy to clip board */
 
 .tempWindow {
@@ -140,6 +163,9 @@
     padding: 10px;
     border-radius: 10px;
 }
+
+
+/* ======================================== Responsive ======================================== */
 
 
 /* Media queries */
