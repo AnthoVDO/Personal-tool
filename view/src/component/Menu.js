@@ -12,6 +12,7 @@ import {
     // NavLink
   } from "react-router-dom";
 import { Navbar, Container } from 'react-bootstrap';
+import CreateUser from './user/CreateUser';
 
 const Menu = () => {
     return (
@@ -30,9 +31,8 @@ const Menu = () => {
                                     <Nav 
                             variant="tabs" 
                             defaultActiveKey="/home" 
-                            
-                            
                             >
+                                
                                 <Nav.Item>
                                     <Nav.Link href="/home">
                                         Home
@@ -43,7 +43,7 @@ const Menu = () => {
                                         Holiday request
                                     </Nav.Link>
                                 </Nav.Item>
-                                <Nav.Item>
+                                <Nav.Item className="margin-right-30px">
                                     <Nav.Link as={Link} to={"/MbtsReport"} eventKey="MbtsReport">
                                         Mbts report
                                     </Nav.Link>
@@ -53,6 +53,16 @@ const Menu = () => {
                                         Login
                                     </Nav.Link>
                                 </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link as={Link} to={"/SignIn"} eventKey="SignIn">
+                                        Sign-In
+                                    </Nav.Link>
+                                </Nav.Item>
+                            
+                            </Nav>
+
+                            <Nav>
+
                             </Nav>
                             </Container>
                     </Navbar>
@@ -67,6 +77,9 @@ const Menu = () => {
                         </Route>
                         <Route path="/Login">
                             <Login/>
+                        </Route>
+                        <Route path="/SignIn">
+                            <CreateUser/>
                         </Route>
                     </Switch>
 

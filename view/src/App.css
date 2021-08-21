@@ -30,6 +30,13 @@ h2 {
 }
 
 
+/* ======================================== Unique class ======================================== */
+
+.margin-right-30px {
+    margin-right: 30px;
+}
+
+
 /* ======================================== Holiday request ======================================== */
 
 
@@ -162,6 +169,27 @@ h2 {
     color: white;
     padding: 10px;
     border-radius: 10px;
+}
+
+
+/* ======================================== Create user / register ======================================== */
+
+.createUser__password__regex {
+    word-wrap: break-word;
+    font-size: 0.8em;
+}
+
+.createUser__password__match,
+.createUser__password__red {
+    color: rgb(175, 12, 12) !important;
+    font-style: oblique;
+    font-weight: 400;
+}
+
+.createUser__password__green {
+    color: rgb(3, 114, 12) !important;
+    font-style: oblique;
+    font-weight: 400;
 }
 
 
