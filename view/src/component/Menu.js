@@ -13,6 +13,7 @@ import {
   } from "react-router-dom";
 import { Navbar, Container } from 'react-bootstrap';
 import CreateUser from './user/CreateUser';
+import Home from './Home';
 
 const Menu = () => {
     return (
@@ -54,8 +55,8 @@ const Menu = () => {
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link as={Link} to={"/SignIn"} eventKey="SignIn">
-                                        Sign-In
+                                    <Nav.Link as={Link} to={"/Register"} eventKey="Register">
+                                        Register
                                     </Nav.Link>
                                 </Nav.Item>
                             
@@ -78,8 +79,11 @@ const Menu = () => {
                         <Route path="/Login">
                             <Login/>
                         </Route>
-                        <Route path="/SignIn">
+                        <Route path="/Register">
                             <CreateUser/>
+                        </Route>
+                        <Route path="/">
+                            <Home/>
                         </Route>
                     </Switch>
 

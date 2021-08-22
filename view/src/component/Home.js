@@ -4,7 +4,13 @@ const Home = () => {
     return (
         <div className="home">
 
-            <h2>Welcome, choose a tool</h2>
+            <h2 
+            style={{textAlign:"center"}} 
+            >Welcome to my tool app </h2>
+            <p>
+                The purpose of this web app is to help you at work with differents tool.
+            </p>
+
 
 
 

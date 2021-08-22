@@ -5,7 +5,9 @@ const Footer = () => {
         <footer className="generalFooter"
         >
                     <h6>
-                       Made by Anthony Van Den Ostende 
+                       Made by <a href="https://github.com/AnthoVDO" target="_blank" rel="noopener noreferrer" >
+                       AnthoVDO
+                       </a>
                     </h6>
         </footer>
     );

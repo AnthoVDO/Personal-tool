@@ -11,17 +11,23 @@ const CreateUser = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordMatch, setPasswordMatch] = useState(true);
     const [passwordLenght, setPasswordLength] = useState(false);
-    const [passwordLetter, setPasswordLetter] = useState(false);
+    const [passwordCapitalLetter, setPasswordCapitalLetter] = useState(false);
+    const [passwordLowerLetter, setPasswordLowerLetter] = useState(false);
     const [passwordNumber, setPasswordNumber] = useState(false);
     const [passwordSpecialChar, setPasswordSpecialChar] = useState(false);
 
-    const regexNumber = /"a"/;
-    const regexLetter = /"a"/;
-    const specialChar = /"a"/;
+    
 
     useEffect(() => {
+
+        const regexNumber = /[0-9]/;
+        const regexCapitalLetter = /[A-Z]/;
+        const regexLowerLetter = /[a-z]/;
+        const specialChar = /\(|\)|@|-|_|\.|&/;
+
         password.length > 7 && password.length <21 ? setPasswordLength(true) : setPasswordLength(false);
-        password.match(regexLetter) ? setPasswordLetter(true) : setPasswordLetter(false);
+        password.match(regexCapitalLetter) ? setPasswordCapitalLetter(true) : setPasswordCapitalLetter(false);
+        password.match(regexLowerLetter) ? setPasswordLowerLetter(true) : setPasswordLowerLetter(false);
         password.match(regexNumber) ? setPasswordNumber(true) : setPasswordNumber(false);
         password.match(specialChar) ? setPasswordSpecialChar(true) : setPasswordSpecialChar(false);
     }, [password])
@@ -41,10 +47,8 @@ const CreateUser = () => {
     useEffect(() => {
         
         if(password === confirmPassword){
-            console.log(true)
             setPasswordMatch(true);
         }else{
-            console.log(false)
             setPasswordMatch(false);
         }
 
@@ -56,7 +60,7 @@ const CreateUser = () => {
 
     return (
         <div>
-        <h2>Sign-in</h2>
+        <h2>Register</h2>
         <Form>
 
             <Form.Group className="mb-3" controlId="Alias">
@@ -91,8 +95,11 @@ const CreateUser = () => {
                                 passwordLenght ? "createUser__password__green" : "createUser__password__red"
                             }>a length from 8 to 20 characters</li>
                             <li className={
-                                passwordLetter ? "createUser__password__green" : "createUser__password__red"
-                            }>minimum 1 letter</li>
+                                passwordCapitalLetter ? "createUser__password__green" : "createUser__password__red"
+                            }>minimum 1 capital letter</li>
+                            <li className={
+                                passwordLowerLetter ? "createUser__password__green" : "createUser__password__red"
+                            }>minimum 1 lower letter</li>
                             <li className={
                                 passwordNumber ? "createUser__password__green" : "createUser__password__red"
                             }>minimum 1 number</li>
