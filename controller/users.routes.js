@@ -1,4 +1,10 @@
 import express from "express";
-import { Router } from "express";
+import passport from "passport";
+import passwordUtils from "../config/passwordUtils.js";
 
-Router.route("/users").get();
+
+const router = express.Router;
+
+router.route("/users").get();
+
+module.exports = router;

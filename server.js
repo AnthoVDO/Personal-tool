@@ -2,28 +2,48 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import passport from "passport";
-import passportLocal from "passport-local";
-import cookieParser from "cookie-parser";
 import bcrypt from "bcryptjs";
 import session from "express-session";
+import MongoStore from "connect-mongo";
+import dotenv from "dotenv";
+import connection from "./config/database.js";
 
 const app = express();
-const passportLocalStrategy = passportLocal.Strategy();
-
+MongoStore = MongoStore(session);
 const port = process.env.PORT || 8080;
+dotenv.config();
 
 
 app.use(express.json());
-app.use(cors({
-    origin: "http://localhost:3000", //<--location to the react app
-    credentials: true
-}));
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+
+/* Connection to mongo */
+
+// const sessionStore = new MongoStore({
+//     mongooseConnection: connection,
+//     collection: "session"
+// })
+
+const sessionStore = MongoStore.create({
+    mongoUrl: connection.conn
+})
 
 app.use(session({
     secret: process.env.SECRETSESSIONCODE,
-    resave: true,
-    saveUninitialized: true
-}))
+    resave: false,
+    saveUninitialized: true,
+    store: sessionStore,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 //Equal 1 day
+    }
+}));
+
+/* Passport */
+
+
+
+
 
 /* Routes */
 
